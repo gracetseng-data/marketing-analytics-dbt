@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_campaign_performance
+    description: Cleaned and standardized daily marketing campaign performance data.
+
+    columns:
+      - name: performance_date
+        description: Date of campaign performance.
+        data_tests:
+          - not_null
+
+      - name: platform
+        description: Advertising platform.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - google_ads
+                  - meta_ads
+
+      - name: campaign_id
+        description: Unique identifier of the campaign within each platform.
+        data_tests:
+          - not_null
+
+      - name: campaign_name
+        description: Campaign display name.
+        data_tests:
+          - not_null
+
+      - name: impressions
+        description: Number of ad impressions.
+        data_tests:
+          - not_null
+
+      - name: clicks
+        description: Number of ad clicks.
+        data_tests:
+          - not_null
+
+      - name: spend
+        description: Advertising spend.
+        data_tests:
+          - not_null
+
+      - name: conversions
+        description: Number of attributed conversions.
+        data_tests:
+          - not_null
+
+      - name: revenue
+        description: Revenue attributed to the campaign.
+        data_tests:
+          - not_null

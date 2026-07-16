@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: dim_campaigns
+    description: One record for each advertising campaign and platform combination.
+
+    columns:
+      - name: campaign_key
+        description: Unique key generated from platform and campaign ID.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: platform
+        description: Advertising platform.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - google_ads
+                  - meta_ads
+
+      - name: campaign_id
+        description: Campaign identifier within the advertising platform.
+        data_tests:
+          - not_null
+
+      - name: campaign_name
+        description: Campaign display name.
+        data_tests:
+          - not_null
+
+  - name: fct_daily_campaign_performance
+    description: Daily advertising performance metrics for each campaign.
+
+    columns:
+      - name: daily_campaign_key
+        description: Unique key for each date and campaign combination.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: performance_date
+        description: Date of campaign performance.
+        data_tests:
+          - not_null
+
+      - name: campaign_key
+        description: Foreign key referencing the campaign dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_campaigns')
+                field: campaign_key
+
+      - name: impressions
+        description: Number of ad impressions.
+        data_tests:
+          - not_null
+
+      - name: clicks
+        description: Number of ad clicks.
+        data_tests:
+          - not_null
+
+      - name: spend
+        description: Advertising spend.
+        data_tests:
+          - not_null
+
+      - name: conversions
+        description: Number of attributed conversions.
+        data_tests:
+          - not_null
+
+      - name: revenue
+        description: Revenue attributed to the campaign.
+        data_tests:
+          - not_null

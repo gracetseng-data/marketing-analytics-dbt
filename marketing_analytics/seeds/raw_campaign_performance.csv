@@ -1,0 +1,11 @@
+date,platform,campaign_id,campaign_name,impressions,clicks,spend,conversions,revenue
+2026-07-01,google_ads,G001,Summer_Search,12000,620,930.50,42,4200.00
+2026-07-01,meta_ads,M001,Summer_Social,18000,810,1080.00,55,5500.00
+2026-07-02,google_ads,G001,Summer_Search,12500,645,967.50,45,4500.00
+2026-07-02,meta_ads,M001,Summer_Social,17600,790,1055.00,51,5100.00
+2026-07-03,google_ads,G002,Brand_Search,9000,720,864.00,63,6930.00
+2026-07-03,meta_ads,M002,Retargeting,14000,980,1176.00,78,8580.00
+2026-07-04,google_ads,G002,Brand_Search,9400,752,902.40,66,7260.00
+2026-07-04,meta_ads,M002,Retargeting,14500,1015,1218.00,81,8910.00
+2026-07-05,google_ads,G003,New_User_Search,11000,495,792.00,31,3100.00
+2026-07-05,meta_ads,M003,New_User_Social,16000,640,896.00,39,3900.00
