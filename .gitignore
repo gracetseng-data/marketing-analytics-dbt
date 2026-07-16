@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Python virtual environment
+.venv/
+
+# dbt generated files
+**/target/
+**/logs/
+**/dbt_packages/
+
+# Local DuckDB database
+*.duckdb
+*.duckdb.wal
